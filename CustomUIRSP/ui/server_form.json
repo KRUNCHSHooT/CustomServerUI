@@ -280,7 +280,8 @@
                          "layer": -1,
                          "size": ["99%", "100% + 10px"],
                          "offset": [-6, 0],
-                         "texture": "textures/ui/hud_tip_text_background_alt"
+                         "texture": "textures/ui/hud_tip_text_background_alt",
+                         "alpha": 0.7
                       }
                    }
                 ]
@@ -355,9 +356,6 @@
                  "$hover_button_texture": "textures/ui/hud_tip_text_background_hover",
                  "$pressed_button_texture": "textures/ui/hud_tip_text_background_hover",
                  "$locked_button_texture": "textures/ui/hud_tip_text_background_alt",
-                 "$default_content_alpha": 0.8,
-                 "$hover_content_alpha": 0.8,
-                 "$locked_alpha": 0.8,
                  "controls": [
                     {
                        "progressks7@progress.progress_loading_bars": {
@@ -413,7 +411,7 @@
           "$border_layer": 2,
           "$border_visible": false,
           "$default_state": true,
-          "$button_alpha": "$default_button_alpha",
+          "$button_alpha": 0.7,
           "layer": 1
         }
       },
@@ -427,7 +425,7 @@
           "$border_layer": 4,
           "$border_visible": false,
           "$hover_state": true,
-          "$button_alpha": "$default_hover_alpha",
+          "$button_alpha": 0.7,
           "layer": 4 // This is several layers higher than default in case two buttons share a border and that shared border needs to turn with with either button hover/press state
         }
       },
@@ -442,7 +440,7 @@
           "$border_layer": 5,
           "$border_visible": false,
           "$pressed_state": true,
-          "$button_alpha": "$default_pressed_alpha",
+          "$button_alpha": 0.7,
           "layer": 5
         }
       },
