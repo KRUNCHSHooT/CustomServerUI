@@ -1,4 +1,4 @@
-a# CustomServerUI
+# CustomServerUI
 This is a resource pack that contains a custom server UI
 
 ## this will not be continued anymore
