@@ -68,7 +68,7 @@
   
   "standard_title_label": {
     "type": "label",
-    
+    "font_type": "MinecraftTen",
     "color": "$title_text_color",
     "text": "$text_name",
     "font_size": "large",
