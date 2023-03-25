@@ -53,7 +53,7 @@
           "texture": "$dialog_background_texture",
           "layer": -1,
           "offset": [0, -1],
-          "size": [ "100% - 4px", "100% - 25px" ],
+          "size": [ "100% - 4px", "100% - 24px" ],
           "anchor_from": "bottom_middle",
           "anchor_to": "bottom_middle",
           "alpha": "$fill_alpha"
