@@ -38,7 +38,7 @@
     "layer": 2,
     "anchor_from": "bottom_middle",
     "anchor_to": "bottom_middle",
-    "$fill_alpha|default": 0.6,
+    "$fill_alpha|default": 0.8,
     "$dialog_background_texture|default": "textures/ui/control",
     "variables": [
       {
@@ -160,8 +160,9 @@
           "ignored": "(not $show_close_button)",
           "controls": [
             {
-              "close@common.close_button": {
+              "close@server_form.close_button": {
                 "layer": "$close_button_layer",
+                "$close_button_offset": [2, 0],
                 "offset": "$close_button_offset",
                 "ignored": "$use_compact_close_button"
               }
@@ -182,6 +183,103 @@
           ]
         }
       }
+    ]
+  },
+  
+  "close_button": {
+    "type": "button",
+    "size": [ 21, 21 ],
+    "layer": 10,
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "$close_button_offset|default": [ -2, 2 ],
+    "offset": "$close_button_offset",
+    "locked_control": "",
+    "default_control": "default",
+    "hover_control": "hover",
+    "pressed_control": "pressed",
+    "sound_name": "random.click",
+    "sound_volume": 1.0,
+    "sound_pitch": 1.0,
+    "$close_button_panel_size|default": [ 15, 15 ],
+    "$close_button_to_button_id|default": "button.menu_exit",
+    "$default_button_alpha|default": 1,
+    "$default_hover_alpha|default": 1,
+    "$default_pressed_alpha|default": 1,
+    "$close_button_visible_binding_name|default": "#close_button_visible",
+    "$close_button_visible_binding_type|default": "none",
+
+    "$button_tts_name|default": "",
+    "$button_tts_header|default": "accessibility.button.close",
+    "$tts_section_header|default": "",
+
+    "tts_name": "$button_tts_name",
+    "tts_control_header": "$button_tts_header",
+    "tts_section_header": "$tts_section_header",
+
+    "bindings": [
+      {
+        "binding_type": "$close_button_visible_binding_type",
+        "binding_name": "$close_button_visible_binding_name",
+        "binding_name_override": "#visible"
+      },
+      {
+        "binding_name": "#tts_enabled",
+        "binding_name_override": "#focus_enabled"
+      }
+    ],
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "$close_button_to_button_id",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "$close_button_to_button_id",
+        "mapping_type": "focused"
+      }
+    ],
+    "controls": [
+      {
+        "default@server_form.close_button_panel": {
+          "$close_button_texture": "textures/ui/close_button_default",
+          "$button_alpha": "$default_button_alpha"
+          
+        }
+      },
+      {
+        "hover@server_form.close_button_panel": {
+          "$close_button_texture": "textures/ui/close_button_hover"
+        }
+      },
+      {
+        "pressed@server_form.close_button_panel": {
+          "$close_button_texture": "textures/ui/close_button_pressed"
+        }
+      }
+    ]
+  },
+  
+  "close_button_panel": {
+    "type": "panel",
+    "layer": 1,
+    "size": "$close_button_panel_size",
+    "$button_alpha|default": 1,
+    "controls": [
+      {
+        "close_button_image@common.close_button_image": {
+          "alpha": "$button_alpha"
+        }
+      },
+      {
+           "bg_image": {
+             "type": "image",
+             "layer": -1,
+             "texture": "textures/ui/Black",
+             "alpha": 0.8
+           }
+         }
     ]
   },
   
@@ -217,8 +315,8 @@
   "long_form@server_form.main_panel_no_buttons": {
     "$title_panel": "server_form.standard_title_label",
     "$title_size": ["100%cm", 25 ],
-    "$title_offset": [5, 0],
-    "size": [340, 200],
+    "$title_offset": [0, -5],
+    "size": [400, 195],
     "$text_name": "#title_text",
     "$title_text_binding_type": "none",
     "$child_control": "server_form.long_form_panel",
@@ -241,7 +339,7 @@
           "size": [ "100%", "100%" ],
           "$scrolling_content": "server_form.long_form_scrolling_content",
           "$scroll_size": [ 5, "100%" ],
-          "$scrolling_pane_size": [ "100% - 4px", "100% - 2px" ],
+          "$scrolling_pane_size": [ "100% - 8px", "100% - 5px" ],
           "$scrolling_pane_offset": [ 2, 5 ],
           "$scroll_bar_right_padding_size": [ 0, 0 ]
         }
@@ -315,8 +413,8 @@
     "grid_dimensions": [3, 20],
     "grid_rescaling_type": "horizontal",
     "grid_item_template": "server_form.dynamic_button",
-    "size": [330, "100%c"],
-    "offset": [0, 0],
+    "size": ["100%", "100%c"],
+    "offset": [3, 0],
     "anchor_from": "top_center",
     "anchor_to": "top_center",
 
@@ -336,7 +434,7 @@
 
   "dynamic_button": {
     "type": "stack_panel",
-    "size": [105, 90],
+    "size": ["33.333333333333%", 100],
     "orientation": "horizontal",
     "anchor_from": "top_center",
     "anchor_to": "top_center",
@@ -346,7 +444,7 @@
                  "$pressed_button_name": "button.form_button_click",
                  "anchor_from": "bottom_center",
                  "anchor_to": "bottom_center",
-                 "size": [100, 85 ],
+                 "size": ["100% - 3px", "100% - 5px" ],
                  "$button_offset": [ 0, 20],
                  "$button_text": "#form_button_text",
                  "$button_text_binding_type": "collection",

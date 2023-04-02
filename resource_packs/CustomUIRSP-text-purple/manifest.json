@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "Please support me. YT: KRUNCH SHooT",
+    "name": "Purple UI - Custom Server UI by KRUNCH SHooT",
+    "uuid": "9cce3485-f865-4b31-b181-f9a4a388e721",
+    "version": [2,1,0],
+    "min_engine_version": [1, 13, 0]
+  },
+  "modules": [
+    {
+      "description": "Purple UI - Custom Server UI by KRUNCH SHooT!",
+      "type": "resources",
+      "uuid": "ac2f9e41-5bf3-4e33-9412-509feb37cfe4",
+       "version": [1, 0, 0]
+    }
+  ]
+}
